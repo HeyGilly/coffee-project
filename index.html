@@ -1,34 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Coffee!</h1>
 
-    <form>
-        <label for="roast-selection"></label>
-        <select id="roast-selection">
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-        <input id="submit" type="submit" />
-    </form>
+    <div class="d-flex justify-content-evenly border border-5 border-dark p-5 my-5">
+        <!--Search Form-->
+        <form class="w-25 border border-dark border-3 rounded px-2 h-100 py-4">
+            <h4 class="text-center">Search for coffee:</h4>
+            <hr class="border border-dark rounded border-3 opacity-75"/>
+            <!--Input Search-->
+            <div class="form-group">
+                <label for="coffeeNameInput">Search for Coffee Name:</label>
+                <input type="text" class="form-control" id="coffeeNameInput" aria-describedby="emailHelp" placeholder="Coffee's Name">
+                <small id="coffeeNameHelp" class="form-text text-muted">Not Case sensitive.</small>
+            </div>
+            <!--DropDown Search-->
+            <div class="form-group mt-3">
+                <label for="roast-selection">Roast Type:</label>
+                <select id="roast-selection" class="form-control form-control">
+                    <option selected disabled>Choose...</option>
+                    <option>all</option>
+                    <option>light</option>
+                    <option>medium</option>
+                    <option>dark</option>
+                </select>
+            </div>
+            <input id="submit" type="submit" class="btn btn-success mt-3" />
+        </form>
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>NAME</th>
-                <th>ROAST</th>
-            </tr>
-        </thead>
-        <tbody id="coffees"></tbody>
-    </table>
+        <!--Add Coffee Form -->
+        <form class="w-25 border border-dark border-3 rounded px-2 h-100 py-4">
+            <h4 class="text-center">Add Your Coffee:</h4>
+            <hr class="border border-dark rounded border-3 opacity-75"/>
+            <!--Input Search-->
+            <div class="form-group">
+                <label for="addCoffeeNameInput">Coffee Name:</label>
+                <input type="text" class="form-control" id="addCoffeeNameInput" aria-describedby="emailHelp" placeholder="Coffee's Name">
+<!--                <small id="addCoffeeNameHelp" class="form-text text-muted">Not Case sensitive.</small>-->
+            </div>
+            <!--DropDown Search-->
+            <div class="form-group mt-3">
+                <label for="add-roast-selection">Roast Type:</label>
+                <select id="add-roast-selection" class="form-control form-control">
+                    <option selected disabled>Choose...</option>
+                    <option>light</option>
+                    <option>medium</option>
+                    <option>dark</option>
+                </select>
+            </div>
+            <input id="submit-button-adding" type="submit" class="btn btn-success mt-3" />
+        </form>
+    </div>
 
-    <script src="main.js"></script>
+
+
+
+
+    <!--    <table>-->
+<!--        <thead>-->
+<!--            <tr>-->
+<!--                <th>ID</th>-->
+<!--                <th>NAME</th>-->
+<!--                <th>ROAST</th>-->
+<!--            </tr>-->
+<!--        </thead>-->
+        <div id="coffees" class="d-flex flex-wrap border justify-content-center"></div>
+<!--    </table>-->
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="main.js"></script>
 </html>
