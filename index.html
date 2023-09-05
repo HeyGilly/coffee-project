@@ -3,76 +3,114 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Coffee House</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Coffee!</h1>
+    <!--NavBar-->
+  <nav class="navbar navbar-light bg-light">
+      <div class="container">
+          <img src="img/logo.png" alt="" width="60" height="60">
+          <a class="text-decoration-none nav-link " id="nav-link" target="_blank" href="#Search_Form">Search for Coffee</a>
+      </div>
+  </nav>
 
-    <div class="d-flex justify-content-evenly border border-5 border-dark p-5 my-5">
-        <!--Search Form-->
-        <form class="w-25 border border-dark border-3 rounded px-2 h-100 py-4">
-            <h4 class="text-center">Search for coffee:</h4>
-            <hr class="border border-dark rounded border-3 opacity-75"/>
-            <!--Input Search-->
-            <div class="form-group">
-                <label for="coffeeNameInput">Search for Coffee Name:</label>
-                <input type="text" class="form-control" id="coffeeNameInput" aria-describedby="emailHelp" placeholder="Coffee's Name">
-                <small id="coffeeNameHelp" class="form-text text-muted">Not Case sensitive.</small>
-            </div>
-            <!--DropDown Search-->
-            <div class="form-group mt-3">
-                <label for="roast-selection">Roast Type:</label>
-                <select id="roast-selection" class="form-control form-control">
-                    <option selected disabled>Choose...</option>
-                    <option>all</option>
-                    <option>light</option>
-                    <option>medium</option>
-                    <option>dark</option>
-                </select>
-            </div>
-            <input id="submit" type="submit" class="btn btn-success mt-3" />
-        </form>
+    <!--Hero Background-->
+    <div class="video-wrapper text-center">
+        <!--Dark Overlay-->
+        <div class="overlay"></div>
+        <!-- Video Background -->
+        <video playsinline autoplay muted loop>
+            <source src="img/coffeeVideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- Content -->
+        <div class="header">
+            <!-- Header-->
+            <h1 class="display-5 fw-bold">The Coffee House</h1>
+            <!-- Text -->
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">
+                    Welcome to The Coffee House! Where every cup of coffee is a delightful journey through the world of rich flavors and aromatic blends, crafted to elevate your daily caffeine ritual.
+                </p>
 
-        <!--Add Coffee Form -->
-        <form class="w-25 border border-dark border-3 rounded px-2 h-100 py-4">
-            <h4 class="text-center">Add Your Coffee:</h4>
-            <hr class="border border-dark rounded border-3 opacity-75"/>
-            <!--Input Search-->
-            <div class="form-group">
-                <label for="addCoffeeNameInput">Coffee Name:</label>
-                <input type="text" class="form-control" id="addCoffeeNameInput" aria-describedby="emailHelp" placeholder="Coffee's Name">
-<!--                <small id="addCoffeeNameHelp" class="form-text text-muted">Not Case sensitive.</small>-->
             </div>
-            <!--DropDown Search-->
-            <div class="form-group mt-3">
-                <label for="add-roast-selection">Roast Type:</label>
-                <select id="add-roast-selection" class="form-control form-control">
-                    <option selected disabled>Choose...</option>
-                    <option>light</option>
-                    <option>medium</option>
-                    <option>dark</option>
-                </select>
-            </div>
-            <input id="submit-button-adding" type="submit" class="btn btn-success mt-3" />
-        </form>
+        </div>
+    </div>
+
+    <div class="d-flex row w-100">
+        <!-- Search Input -->
+        <div class="mx-sm-2 px-sm-2 col-12 col-md">
+            <section class="mx-2 px-2">
+                <!-- Form -->
+                <form class="bg-light rounded mx-0 px-2 my-5 py-3" id="Search_Form">
+                    <!-- Form Header -->
+                    <h5 class="text-center">Search for coffee:</h5>
+                    <div class="row d-flex">
+                        <!--Input Search-->
+                        <section class="input-group col">
+                            <label for="coffeeNameInput" class="col-12">Coffee's Name:</label>
+                            <input type="text" class="form-control" id="coffeeNameInput" aria-describedby="Coffee's Name" placeholder="...">
+                        </section>
+                        <!--DropDown Search-->
+                        <section class="input-group col">
+                            <label for="roast-selection" class="col-12">Roast Type:</label>
+                            <select id="roast-selection" class="form-control">
+                                <option selected disabled>Choose...</option>
+                                <option>all</option>
+                                <option>light</option>
+                                <option>medium</option>
+                                <option>dark</option>
+                            </select>
+                            <input id="submit" type="submit" class="btn btn-success" />
+                        </section>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+        <!-- Adding New Coffee By Name and Roast -->
+        <div class="mx-sm-2 px-sm-2 col-12 col-md">
+            <section class="mx-2 mx-sm-2 px-2 px-sm-2">
+                <!-- Form -->
+                <form class="bg-light rounded mx-0 px-2 my-5 py-3" id="addForm">
+                    <!-- Form Header -->
+                    <h5 class="text-center">Adding New Coffee:</h5>
+                    <div class="row d-flex">
+                        <!--Input Search-->
+                        <section class="input-group col">
+                            <label for="coffeeNameInput" class="col-12">Add Name:</label>
+                            <input type="text" class="form-control" id="addCoffeeNameInput" aria-describedby="Coffee's Name" placeholder="...">
+                        </section>
+                        <!--DropDown Search-->
+                        <section class="input-group col">
+                            <label for="add-roast-selection" class="col-12">Roast Type:</label>
+                            <select id="add-roast-selection" class="form-control">
+                                <option selected disabled>Choose...</option>
+                                <option>light</option>
+                                <option>medium</option>
+                                <option>dark</option>
+                            </select>
+                            <input id="submit-button-adding" type="submit" class="btn btn-success" />
+                        </section>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+
+
+    <div class="mx-0 mx-md-5 px-0 px-md-5 py-5 my-5">
+        <section class="p-0 m-0 mx-lg-5 px-lg-5">
+            <!--ShowCase of All Coffees-->
+            <aside id="coffees" class="d-flex flex-wrap"></aside>
+        </section>
     </div>
 
 
 
 
-
-    <!--    <table>-->
-<!--        <thead>-->
-<!--            <tr>-->
-<!--                <th>ID</th>-->
-<!--                <th>NAME</th>-->
-<!--                <th>ROAST</th>-->
-<!--            </tr>-->
-<!--        </thead>-->
-        <div id="coffees" class="d-flex flex-wrap border justify-content-center"></div>
-<!--    </table>-->
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script src="main.js"></script>
