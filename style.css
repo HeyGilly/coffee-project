@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Balsamiq+Sans:wght@400;700&display=swap');h1, h2, h3, h4, h5{
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 2px;
+}
+
+body{
+    background-color: burlywood;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background: #1e1e1e;
+    opacity: 0.5;
+}
+
+video {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.video-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+}
+.header{
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+    z-index: 3;
+
+}
+
+#Search_Form, #addForm{
+    box-shadow: rgba(6, 24, 44, 0.4) 0 0 0 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+#submit, #submit-button-adding{
+    background-color: burlywood;
+    border: none;
+    transition: all 1.3s;
+}
+#submit:hover, #submit-button-adding:hover{
+    background-color: #9a703b;
+    transform: scale(1.08);
+}
+
+#nav-link{transition: all 1.5s}
+
+#nav-link:hover{
+    color: burlywood;
+    transform: scale(1.2);
+}
+
+
+.coffee{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    width:fit-content;
+    margin: 6px;
+    padding: 5px 15px;
+}
