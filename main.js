@@ -14,7 +14,7 @@ function renderCoffee(coffee) {
 //-- Looping through each coffee in the coffee object
 function renderCoffees(coffees) {
     var html = '';
-    for(var i = coffees.length - 1; i >= 0; i--) {
+    for(let i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
     }
     return html;
@@ -106,6 +106,7 @@ function addingCoffee(e){
     e.preventDefault()
     let addRoastSelection = document.querySelector('#add-roast-selection').value;
     let addNameInputValue = document.querySelector('#addCoffeeNameInput').value;
+    let addForm = document.querySelector('#addForm');
 
     let newCoffee = {id: 1+coffees.length, name: addNameInputValue, roast: addRoastSelection};
 
@@ -114,10 +115,11 @@ function addingCoffee(e){
     coffees.sort((x, y) => {return y.id - x.id;});
 
 
-
     tbody.innerHTML = renderCoffees(coffees);
     localStorage.setItem('coffees', JSON.stringify(coffees));
     console.log(JSON.parse(localStorage.getItem("coffees")).sort());
+
+    addForm.reset();
 }
 
 
