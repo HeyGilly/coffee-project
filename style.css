@@ -40,7 +40,7 @@ video {
     color: white;
     text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
     z-index: 3;
-
+    animation: mymove 15s ;
 }
 
 #Search_Form, #addForm{
@@ -70,4 +70,23 @@ video {
     width:fit-content;
     margin: 6px;
     padding: 5px 15px;
+}
+
+#logo-nav {
+    position: relative;
+    animation: mymove 5s ;
+}
+#nav-link{
+    position: relative;
+    animation: mymove 10s ;
+}
+
+
+
+@keyframes mymove {
+    from {opacity: 0;}
+    to {opacity: 25%;}
+    to {opacity: 50%;}
+    to {opacity: 75%;}
+    to {opacity: 100%;}
 }
