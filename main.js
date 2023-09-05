@@ -1,34 +1,12 @@
 "use strict"
 
-/**
- TODO
-    [X] Update the HTML
-        [X] each coffee is displayed in a div
-        [X] A heading displaying the coffee name
-        [X] The type of roast in a paragraph.
-        [X] Don't display the ids
-        [X] Coffees should be sorted by their ids in ascending order
-    [ ] Functional
-        [X] Display only the coffees that match the provided search term
-            (You will need to add an input field to the existing form for this)
-        [X] update the displayed coffee as the user types into the search box
-        [X] update the displayed coffee as they select an option from the select
-    [ ] BONUS:
-        [X] Add an option to select all roasts for roast type
-        [X] Make your name search case insensitive
-        [ ] Allow the user to add new coffees to the page
-
- */
-
-
-
 // -- This is going to showcase the coffee Information
 function renderCoffee(coffee) {
-    let html = '<div class="coffee border border-dark p-4 border-3 d-flex rounded" style="width:fit-content">';
+    let html = '<section class="coffee rounded bg-light">';
     // html += '<small>' + coffee.id + '</small>';
-    html += '<h1>' + coffee.name + '</h1>';
-    html += '<p>' + coffee.roast + '</p>';
-    html += '</div>';
+    html += '<h3 class="p-0 m-0">' + coffee.name+ '</h3>';
+    html += '<p class="p-0 m-0">' + coffee.roast + '</p>';
+    html += '</section>';
 
     return html;
 }
@@ -58,7 +36,7 @@ function updateCoffees(e) {
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
-var coffees = [
+let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
     {id: 3, name: 'Cinnamon', roast: 'light'},
@@ -75,6 +53,7 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+
 let tbody = document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
@@ -82,7 +61,10 @@ let roastSelection = document.querySelector('#roast-selection');
 //Sort by ID
 coffees.sort((x, y) => {return y.id - x.id;});
 
+
 tbody.innerHTML = renderCoffees(coffees);
+
+
 
 //-- Search Button
 submitButton.addEventListener('click', updateCoffees);
@@ -125,24 +107,28 @@ function addingCoffee(e){
     let addRoastSelection = document.querySelector('#add-roast-selection').value;
     let addNameInputValue = document.querySelector('#addCoffeeNameInput').value;
 
-    let addingCoffees = [];
+    let newCoffee = {id: 1+coffees.length, name: addNameInputValue, roast: addRoastSelection};
 
-    coffees.forEach(function(coffee) {
-        addingCoffees.push(coffee);
-    });
-    let newCoffee = {id: this.id, name: addNameInputValue, roast: addRoastSelection};
+     coffees.push(newCoffee);
 
-    addingCoffees.push(newCoffee);
+    coffees.sort((x, y) => {return y.id - x.id;});
 
-    console.log("ID: "+addingCoffees.length+"\nRoast: "+addRoastSelection+" \nCoffee Name: "+addNameInputValue)
-    tbody.innerHTML = renderCoffees(addingCoffees);
+
+
+    tbody.innerHTML = renderCoffees(coffees);
+    localStorage.setItem('coffees', JSON.stringify(coffees));
+    console.log(JSON.parse(localStorage.getItem("coffees")).sort());
 }
 
 
 
 
 
-
+const retrievedObject = JSON.parse(localStorage.getItem("coffees"));
+if(retrievedObject !== null) {
+    coffees = retrievedObject;
+    tbody.innerHTML = renderCoffees(coffees);
+}
 
 
 
